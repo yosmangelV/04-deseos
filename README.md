@@ -11,4 +11,4 @@ El proyecto ha sido generado en la ultima version de ionic (5)
 
 ## Development server
 
- * `ng serve` Para correr el servidor
+ * `ionic serve` Para correr el servidor
