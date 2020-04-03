@@ -7,9 +7,29 @@ import {Lista} from '../models/lista.model';
 export class DeseosService {
   listas: Lista[] = [];
   constructor() {
-    const lista1 = new Lista('Recolectar piedras del infinito');
-    const lista2 = new Lista('Héroes a desaparecer');
-
-    this.listas.push(lista1, lista2);
+    this.cargarStorage();
   }
+
+  crearLista(titulo: string) {
+    const lista = new Lista(titulo);
+    this.listas.push(lista);
+    this.guardarStorage();
+    return lista.id;
+  }
+
+  obtenerLista(id: string|number) {
+    id = Number(id);
+    return this.listas.find( listaData => listaData.id === id );
+  }
+
+  guardarStorage() {
+    localStorage.setItem('data', JSON.stringify(this.listas));
+  }
+
+  cargarStorage() {
+    if (localStorage.getItem('data')) {
+      this.listas = JSON.parse(localStorage.getItem('data'));
+    }
+  }
+
 }
