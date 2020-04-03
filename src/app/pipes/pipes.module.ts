@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
+import { FiltroCompletadoPipe } from './filtro-completado.pipe';
 
 @NgModule({
-  declarations: [],
-  imports: [
+  declarations: [FiltroCompletadoPipe],
+  exports: [
+      FiltroCompletadoPipe
   ]
 })
 export class PipesModule { }
