@@ -24,8 +24,6 @@ export class AgregarPage implements OnInit {
     if (this.nombreItem.length === 0) {
       return;
     }
-    console.log('nombre',this.nombreItem);
-    console.log('lista',this.lista);
     const nuevoItem = new ListaItem(this.nombreItem);
     this.lista.items.push(nuevoItem);
     this.nombreItem = '';
