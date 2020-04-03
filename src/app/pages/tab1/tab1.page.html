@@ -7,25 +7,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" color="dark">
-  <ion-list>
-    <ion-item-sliding *ngFor="let lista of listas; let i = index">
-      <ion-item detail color="dark"
-                (click)="listaSeleccionada(lista)">
-        <ion-label>
-          {{lista.titulo}}
-        </ion-label>
-        <ion-note slot="end" color="tertiary">
-          {{lista.items.length}} items
-        </ion-note>
-      </ion-item>
-      <ion-item-options side="end">
-        <ion-item-option (click)="borrar(i)" color="danger">
-          <ion-icon slot="icon-only" name="close"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-
-  </ion-list>
+  <app-listas [terminada]="false"></app-listas>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
       <ion-fab-button color="tertiary" (click)="agregarLista()">
         <ion-icon name="add"></ion-icon>
